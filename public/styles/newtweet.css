@@ -1,0 +1,69 @@
+.container .new-tweet {
+    margin: 2em;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-top: 2px;
+    float: none;
+    border-radius: 10px;
+    background-color: #eee;
+}
+
+.new-tweet textarea {
+    padding-top: 5px;
+    padding-left: 5px;
+}
+.new-tweet .counter {
+    float: right;
+}
+
+.new-tweet h2 {
+    border-bottom: 2px solid black;
+}
+.new-tweet textarea {
+    width: 100%;
+}
+.tweet-list {
+    margin: 2em;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+
+}
+.tweet-list header {
+    width: -webkit-fill-available;
+    height: 60px;
+    background-color: rgb(216, 224, 224);
+    
+}
+.tweet-list .imgAvatar {
+    float: left;
+    width: 60px;
+    height: 60px;
+}
+.tweet-list h3 {
+    margin-top: 12px;
+    float: left;
+    line-height: 0px;
+    padding-left: 5px;
+}
+.tweet-list .userTag {
+    margin-top: 12px;
+    float: right;
+    line-height: 0px;
+    padding-right: 5px;
+}
+.tweet-list .tweet {
+    opacity: 0.75;
+    border-radius: 10px;
+    background-color: rgba(218, 204, 204, 0.925)
+}
+.tweet-list .tweet:hover {
+    opacity: 1;
+}
+.tweet-list .tweetContent {
+    margin-top: 1rem;
+}
+.tweet-list footer {
+    font-size: 75%;
+}

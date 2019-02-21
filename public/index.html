@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
+    
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/newtweet.css" type="text/css" />
+
+    <!-- External JS -->
+    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+
+    <!-- App JS -->
+
+  </head>
+
+  <body>
+
+    <!-- Top nav bar (fixed) -->
+    <nav id="nav-bar">
+      <img class="logo" src="/images/bird.png">
+      <span class="header">Tweeter</span>
+    </nav>
+
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <!-- start slipsum code -->
+
+      <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form method="POST" action="/tweets">
+            <textarea class="newTweet" name="text" value="140" placeholder="What are you humming about?"></textarea>
+            <input id="tweetButton" type="submit" value="Tweet">
+            <span class="counter">140</span>
+          </form>
+        </section>
+      <section class="tweet-list">
+      </section>
+<!-- end slipsum code -->
+    </main>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+  </body>
+</html>
