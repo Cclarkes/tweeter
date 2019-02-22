@@ -68,3 +68,6 @@
 .tweet-list footer {
     font-size: 75%;
 }
+.tweet-list .error {
+    color: red;
+}
