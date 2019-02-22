@@ -29,18 +29,39 @@ function renderTweets(tweets) {
     }
   )};
 
-const data = [];
-
-renderTweets(data)
+function loadTweets() {
+  $.ajax("/tweets", {
+    method: 'get', 
+    dataType: "json"
+  })
+    .then(function (tweetData) {
+      renderTweets(tweetData);
+})
 }
-);
+loadTweets();
 
-
-$(() => {
   $(".tweetform").on('submit', function (event) {
     event.preventDefault();
+    console.log($(".tweetform"))
     let $input = $(".newTweet").serialize()
-    $.ajax("/tweets", {method: "POST",
-    data: $input})
+
+    if($input.length > 140) {
+      alert("Tweet exceeds character limit.");
+    } else {
+    $.ajax("/tweets", {
+      method: "POST",
+      data: $input,
+      statusCode: {
+        400: function() {
+          alert("Please compose a tweet before pressing submit");
+        }
+  }
+})}
+    loadTweets();
   })
+  $("#composeTweet").on("click", function() {
+    $(".new-tweet").slideToggle("complete", function() {
+      $(".newTweet").focus();
+    });
+  });
 })

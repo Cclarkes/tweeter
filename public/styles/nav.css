@@ -23,3 +23,9 @@ line-height: 80px;
 position: relative;
 float: left;
 }
+
+#nav-bar #composeTweet {
+float: right;
+margin: 15px;
+line-height: 40px;
+}

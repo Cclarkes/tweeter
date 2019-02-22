@@ -7,6 +7,7 @@
     float: none;
     border-radius: 10px;
     background-color: #eee;
+    word-wrap: break-word;
 }
 
 .new-tweet textarea {
@@ -28,7 +29,7 @@
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 8px;
-
+    word-wrap: break-word
 }
 .tweet-list header {
     width: -webkit-fill-available;
