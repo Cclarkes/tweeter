@@ -62,6 +62,9 @@
 .tweet-list .tweet:hover {
     opacity: 1;
 }
+.tweet-list .tweet:hover .postDate span {
+    opacity: 1;
+}
 .tweet-list .tweetContent {
     margin-top: 1rem;
 }
@@ -70,4 +73,8 @@
 }
 .tweet-list .error {
     color: red;
+}
+.tweet-list .postDate span {
+    opacity: 0;
+    float: right;
 }

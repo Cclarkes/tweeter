@@ -1,6 +1,8 @@
 $(document).ready(function() {
   $("#error1").hide();
+  $("#error1").css("color", "red");
   $("#error2").hide();
+  $("#error2").css("color", "red");
 
   function createTweetElement(data) {
 
@@ -16,10 +18,17 @@ $(document).ready(function() {
     let $body = $("<div>").addClass("tweetContent");
     let $p2 = $("<p>").text(data.content.text);
         $body.append($p2);
-  // And finally, the footer is shown below: delclarations and also the final amendment + return
+  // And finally, the footer is shown below: declarations and also the final amendment + return
+    let $myIcons = `<span>
+        <i class="fas fa-flag-checkered" alt="flag"></i>
+        <i class="fas fa-recycle" alt="retweet"></i>
+        <i class="far fa-thumbs-up" alt="like"></i>
+      </span>`
     let $footer = $("<footer>").addClass("postDate");
         $footer.text(data.created_at);
+        $footer.append($myIcons);
         $tweet.append($header).append($body).append($footer);
+
     return ($tweet);
   }
 
@@ -43,21 +52,20 @@ $(document).ready(function() {
 
   $(".tweetform").on('submit', function (event) {
     event.preventDefault();
-    console.log($(".tweetform"))
-    let $input = $(".newTweet").serialize()
-
-    if($input.length > 140) {
+    let $input = $(".newTweet");
+    if($input.val().length > 140) {
       $("#error2").show(200);
     } else {
     $.ajax("/tweets", {
       method: "POST",
-      data: $input,
+      data: $input.serialize(),
       statusCode: {
         400: function() {
-          $("#error1").show(200);
+          $("#error1").show(200); 
         }
       }
     })
+    $(".counter").html(140),
     $(".newTweet").val(``);
     }
   loadTweets();
@@ -69,6 +77,8 @@ $(document).ready(function() {
   $(document).on("click", function() {
     $("#error2").hide(200);
   })
+
+  $(".new-tweet").hide();
 
   $("#composeTweet").on("click", function() {
     $(".new-tweet").slideToggle("complete", function() {
