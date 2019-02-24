@@ -31,9 +31,9 @@ float: right;
 margin: 15px;
 line-height: 40px;
 opacity: 0.75;
-font-style: italic;
 }
 
 #nav-bar #composeTweet:hover {
     opacity: 1;
+    cursor: pointer;
 }

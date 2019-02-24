@@ -33,7 +33,7 @@ $(document).ready(function() {
       </span>`
 
     let $footer = $("<footer>").addClass("postDate");
-        $footer.text(data.created_at);
+        $footer.text("24 Feb 2019");
         $footer.append($myIcons);
         $tweet.append($header).append($body).append($footer);
 
@@ -63,21 +63,20 @@ $(document).ready(function() {
     let $input = $(".newTweet");
     if($input.val().length > 140) {
       $("#error2").show(200);
+    }
+    if($input.val().length === null || $input.val().length < 1 || $input.val().length === "") {
+      $("#error1").show(200);
     } else {
       $.ajax("/tweets", {
         method: "POST",
         data: $input.serialize(),
-        statusCode: {
-          400: function() {
-            $("#error1").show(200); 
-          }
-        }
-      })
-      $(".counter").html(140),
+        })
+        loadTweets();
+      }});
+      $(".counter").html(140);
       $(".newTweet").val(``);
-    }
-  loadTweets();
-  })
+    
+  });
 // Below are both functions placed to hide the error messages.
   $(document).on("click", function() {
     $("#error1").hide(200);
@@ -93,4 +92,3 @@ $(document).ready(function() {
       $(".newTweet").focus();
     });
   });
-})
