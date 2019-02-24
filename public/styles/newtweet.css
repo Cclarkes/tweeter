@@ -5,7 +5,7 @@
     padding-bottom: 16px;
     padding-top: 2px;
     float: none;
-    border-radius: 10px;
+    border-radius: 10px 10px 10px 10px;
     background-color: #eee;
     word-wrap: break-word;
 }
@@ -29,7 +29,8 @@
     padding-left: 16px;
     padding-right: 16px;
     padding-top: 8px;
-    word-wrap: break-word
+    word-wrap: break-word;
+    border-radius: 10px 10px 10px 10px;
 }
 .tweet-list header {
     width: -webkit-fill-available;
@@ -37,8 +38,13 @@
     background-color: rgb(216, 224, 224);
     
 }
+.tweet-list .Avatar {
+    border-radius: 10px 10px 10px 10px;
+}
 .tweet-list .imgAvatar {
     float: left;
+    border-radius: 10px 10px 10px 10px;
+    padding: 2px;   
     width: 60px;
     height: 60px;
 }
@@ -56,8 +62,9 @@
 }
 .tweet-list .tweet {
     opacity: 0.75;
-    border-radius: 10px;
-    background-color: rgba(218, 204, 204, 0.925)
+    border-radius: 10px 10px 10px 10px;
+    background-color: rgba(218, 204, 204, 0.925);
+    margin-bottom: 2px;
 }
 .tweet-list .tweet:hover {
     opacity: 1;
@@ -73,6 +80,9 @@
 }
 .tweet-list .error {
     color: red;
+}
+.tweet-list .postDate {
+    border-top: 1px solid grey;
 }
 .tweet-list .postDate span {
     opacity: 0;
