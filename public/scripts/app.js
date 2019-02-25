@@ -64,7 +64,7 @@ $(document).ready(function() {
     if($input.val().length > 140) {
       $("#error2").show(200);
     }
-    if($input.val().length === null || $input.val().length < 1 || $input.val().length === "") {
+    else if($input.val().length === null || $input.val().length < 1 || $input.val().length === "") {
       $("#error1").show(200);
     } else {
       $.ajax("/tweets", {
@@ -72,9 +72,10 @@ $(document).ready(function() {
         data: $input.serialize(),
         })
         loadTweets();
-      }});
       $(".counter").html(140);
       $(".newTweet").val(``);
+      }});
+
     
   });
 // Below are both functions placed to hide the error messages.
